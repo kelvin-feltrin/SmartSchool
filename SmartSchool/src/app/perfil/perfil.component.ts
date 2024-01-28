@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
+  public titulo = 'Perfil';
+
   constructor() { }
 
   ngOnInit() {
