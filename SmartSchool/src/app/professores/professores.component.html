@@ -1,7 +1,7 @@
 <div *ngIf="professorSelecionado">
     <div class="row row-cols-lg-auto align-items-center justify-content-between mt-1">
         <div class="">
-            <app-titulo [titulo]="'Professor:' + professorSelecionado"></app-titulo>
+            <app-titulo [titulo]="'Professor: ' + professorSelecionado.id"></app-titulo>
         </div>
         <div class="">
             <button class="btn btn-warning" (click)="voltar()">Lista de Professores</button>
@@ -11,11 +11,11 @@
     <form>
         <div class="form-group">
             <label for="formGroupExampleInput">Nome</label>
-            <input type="text" class="form-control">
+            <input type="text" value="{{professorSelecionado.nome}}" class="form-control">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Disciplina</label>
-            <input type="text" class="form-control">
+            <input type="text" value="{{professorSelecionado.disciplina}}" class="form-control">
         </div>
     </form>
 </div>
