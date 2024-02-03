@@ -1,6 +1,27 @@
 <div *ngIf="alunoSelecionado">
-    <app-titulo [titulo]="'Aluno:' + alunoSelecionado"></app-titulo>
-    <button class="btn btn-default" (click)="voltar()">Voltar</button>
+    <div class="row row-cols-lg-auto align-items-center justify-content-between mt-1">
+        <div class="">
+            <app-titulo [titulo]="'Aluno:' + alunoSelecionado"></app-titulo>
+        </div>
+        <div class="">
+            <button class="btn btn-warning" (click)="voltar()">Lista de Alunos</button>
+        </div>
+    </div>
+
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nome</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Sobrenome</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Telefone</label>
+            <input type="text" class="form-control">
+        </div>
+    </form>
 </div>
 
 <div *ngIf="!alunoSelecionado">
