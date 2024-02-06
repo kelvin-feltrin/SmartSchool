@@ -1,4 +1,10 @@
 <div class="row">
+
+    <div>
+        <input type="text" [(ngModel)]="textSimple">
+        <p>{{textSimple}}</p>
+    </div>
+
     <div class="col-sm-6" *ngIf="alunoSelecionado">
         <div class="row row-cols-lg-auto align-items-center justify-content-between mt-1">
             <div class="">
@@ -52,4 +58,5 @@
             </tbody>
         </table>
     </div>
+
 </div>

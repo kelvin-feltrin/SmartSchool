@@ -9,6 +9,7 @@ import { Aluno } from '../models/Aluno';
 export class AlunosComponent implements OnInit {
 
   public titulo = 'Alunos';
+  public textSimple: string = "";
   public alunoSelecionado: Aluno = null as any;
 
   alunos = [
