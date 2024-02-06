@@ -6,7 +6,7 @@
                 <app-titulo [titulo]="'Cód. Aluno: ' + alunoSelecionado.id"></app-titulo>
             </div>
             <div class="">
-                <button class="btn btn-outline-danger" (click)="voltar()">Fechar</button>
+                <button class="btn btn-sm btn-outline-danger" (click)="voltar()">Fechar</button>
             </div>
         </div>
 
@@ -36,18 +36,27 @@
         <table class="table table-hover">
             <thead class="thead-light">
                 <tr>
+                    <th scope="col">Visualizar</th>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
                     <th scope="col">Telefone</th>
+                    <th scope="col">Opções</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="alunoSelect(aluno)">
-                    <th scope="row">{{aluno.id}}</th>
+                <tr *ngFor="let aluno of alunos">
+                    <td><button (click)="alunoSelect(aluno)" class="btn btn-sm btn-outline-warning">detalhe</button></td>
+                    <td scope="row">{{aluno.id}}</td>
                     <td>{{aluno.nome}}</td>
                     <td>{{aluno.sobrenome}}</td>
                     <td>{{aluno.telefone}}</td>
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
             </tbody>
