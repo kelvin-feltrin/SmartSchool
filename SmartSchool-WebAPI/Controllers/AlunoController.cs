@@ -9,7 +9,15 @@ namespace SmartSchool_WebAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Marcos");
+            try
+            {
+                return Ok("");
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"Erro: {ex.Message}");
+            }
         }
     }
 }
