@@ -2,11 +2,10 @@
 {
     public class Professor
     {
-        public Professor(int id, string nome, string disciplina)
+        public Professor(int id, string nome)
         {
             Id = id;
             Nome = nome;
-            Disciplina = disciplina;
         }
 
         protected Professor() { }
@@ -15,6 +14,6 @@
 
         public string Nome { get; set; }
 
-        public string Disciplina { get; set; }
+        public IEnumerable<Disciplina> Disciplinas { get; set; }
     }
 }
