@@ -1,4 +1,6 @@
-﻿namespace SmartSchool_WebAPI.Models
+﻿using System.Collections.Generic;
+
+namespace SmartSchool_WebAPI.Models
 {
     public class Professor
     {

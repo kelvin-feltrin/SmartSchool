@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartSchool-WebAPI", "SmartSchool-WebAPI.csproj", "{D5D4319F-FCD2-438D-BD70-20DF687244E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSchool-WebAPI", "SmartSchool-WebAPI\SmartSchool-WebAPI.csproj", "{4058014F-4A0A-4F5E-B5EC-520E2BA6333A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D5D4319F-FCD2-438D-BD70-20DF687244E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5D4319F-FCD2-438D-BD70-20DF687244E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5D4319F-FCD2-438D-BD70-20DF687244E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5D4319F-FCD2-438D-BD70-20DF687244E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4058014F-4A0A-4F5E-B5EC-520E2BA6333A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4058014F-4A0A-4F5E-B5EC-520E2BA6333A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4058014F-4A0A-4F5E-B5EC-520E2BA6333A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4058014F-4A0A-4F5E-B5EC-520E2BA6333A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D4CA9C0F-A9EC-48E9-AE1D-56EA359409DF}
+		SolutionGuid = {4EF4D89A-7F4F-4DA2-B5EB-2727FE9867B8}
 	EndGlobalSection
 EndGlobal

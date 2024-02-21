@@ -1,18 +1,33 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SmartSchool_WebAPI.Models;
+using System.Collections.Generic;
 
 namespace SmartSchool_WebAPI.Data
 {
     public class DataContext : DbContext
     {
+        public DataContext() : base() { }
+
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+
         public DbSet<Aluno> Alunos { get; set; }
+
         public DbSet<Professor> Professores { get; set; }
         public DbSet<Disciplina> Disciplinas { get; set; }
+
         public DbSet<AlunoDisciplina> AlunosDisciplinas { get; set; }
+
+        //protected override void OnConfiguring
+        //          (DbContextOptionsBuilder OptionsBuilder)
+        //{
+        //    OptionsBuilder.UseSqlite("DefaultConn");
+        //    base.OnConfiguring(OptionsBuilder);
+        //}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);
+
             builder.Entity<AlunoDisciplina>()
                 .HasKey(AD => new { AD.AlunoId, AD.DisciplinaId });
 
