@@ -47,5 +47,21 @@ namespace SmartSchool_WebAPI.Controllers
                 return BadRequest($"Erro: {ex.Message}");
             }
         }
+
+        [HttpGet("ByDisciplina/{disciplinaId}")]
+        public async Task<IActionResult> GetByDisciplinaId(int disciplinaId)
+        {
+            try
+            {
+                var result = await _repo.GetAlunosAsyncByDisciplinaId(disciplinaId, false);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest($"Erro: {ex.Message}");
+            }
+        }
     }
 }
