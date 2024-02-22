@@ -25,6 +25,9 @@ namespace SmartSchool_WebAPI
                 context => context.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
             );
             services.AddControllers();
+
+            services.AddScoped<IRepository, Repository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartSchool_WebAPI", Version = "v1" });

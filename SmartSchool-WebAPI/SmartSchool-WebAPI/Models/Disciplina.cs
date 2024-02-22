@@ -1,4 +1,6 @@
-﻿namespace SmartSchool_WebAPI.Models
+﻿using System.Collections.Generic;
+
+namespace SmartSchool_WebAPI.Models
 {
     public class Disciplina
     {
@@ -18,5 +20,7 @@
         public int ProfessorId { get; set; }
 
         public Professor Professor { get; set; }
+
+        public IEnumerable<AlunoDisciplina> AlunosDisciplinas { get; set; }
     }
 }
