@@ -1,6 +1,6 @@
 export class Aluno {
-    id: Number = {} as Number;
+    id: number = {} as number;
     nome: string = {} as string;
     sobrenome: string = {} as string;
-    telefone: Number = {} as Number;
+    telefone: number = {} as number;
 }
