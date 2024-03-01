@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Professor } from '../models/Professor';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ProfessorService } from './professor.service';
 
 @Component({
   selector: 'app-professores',
@@ -13,13 +14,7 @@ export class ProfessoresComponent implements OnInit {
   public titulo = 'Professores';
   public professorSelecionado: Professor = null as any;
 
-  public professores = [
-    { id: 1, nome: 'Lauro', disciplina: 'Matemática' },
-    { id: 2, nome: 'Roberto', disciplina: 'Física' },
-    { id: 3, nome: 'Ronaldo', disciplina: 'Português' },
-    { id: 4, nome: 'Rodrigo', disciplina: 'Inglês' },
-    { id: 5, nome: 'Alexandre', disciplina: 'Programação' }
-  ]
+  public professores: Professor[] = null as any;
 
   openModal(template: TemplateRef<void>) {
     this.modalRef = this.modalService.show(template);
@@ -33,9 +28,21 @@ export class ProfessoresComponent implements OnInit {
     this.professorSelecionado = null as any;
   }
 
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService,
+              private professorService: ProfessorService) { }
 
   ngOnInit() {
+    this.carregarProfessor();
   }
 
+  carregarProfessor() {
+    this.professorService.getAll().subscribe(
+      (professores: Professor[]) => {
+        this.professores = professores;
+      },
+      (erro: any) => {
+        console.error(erro);
+      }
+    );
+  }
 }
