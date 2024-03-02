@@ -36,6 +36,22 @@ export class ProfessoresComponent implements OnInit {
     this.carregarProfessor();
   }
 
+  salvarProfessor(professor: Professor) {
+    this.professorService.put(professor.id, professor).subscribe(
+      (retorno: Professor) => {
+        console.log(retorno);
+        this.carregarProfessor();
+      },
+      (erro: any) => {
+        console.log(erro);
+      }
+    );
+  }
+
+  professorSubmit() {
+    this.salvarProfessor(this.professorForm.value);
+  }
+
   carregarProfessor() {
     this.professorService.getAll().subscribe(
       (professores: Professor[]) => {
@@ -57,9 +73,5 @@ export class ProfessoresComponent implements OnInit {
       id: [''],
       nome: ['', Validators.required]
     });
-  }
-
-  professorSubmit() {
-    console.log(this.professorForm.value);
   }
 }

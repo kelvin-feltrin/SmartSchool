@@ -1,5 +1,5 @@
 export class Professor {
-    id: Number = {} as Number;
+    id: number = {} as number;
     nome: string = {} as string;
     disciplina: string = {} as string;
 }
