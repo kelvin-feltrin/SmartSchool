@@ -8,14 +8,18 @@
         </div>
     </div>
 
-    <form>
+    <form [formGroup]="professorForm" (submit)="professorSubmit()">
         <div class="form-group">
             <label for="formGroupExampleInput">Nome</label>
-            <input type="text" value="{{professorSelecionado.nome}}" class="form-control">
+            <input type="text" formControlName="nome" class="form-control">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="formGroupExampleInput2">Disciplina</label>
             <input type="text" value="{{professorSelecionado.disciplina}}" class="form-control">
+        </div> -->
+        <div class="form-group">
+            <hr>
+            <button class="btn btn-success" [disabled]="!professorForm.valid">Enviar</button>
         </div>
     </form>
 </div>
