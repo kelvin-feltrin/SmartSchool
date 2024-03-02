@@ -1,12 +1,7 @@
 <div *ngIf="professorSelecionado">
-    <div class="row row-cols-lg-auto align-items-center justify-content-between mt-1">
-        <div class="">
-            <app-titulo [titulo]="'Professor: ' + professorSelecionado.id"></app-titulo>
-        </div>
-        <div class="">
-            <button class="btn btn-warning" (click)="voltar()">Lista de Professores</button>
-        </div>
-    </div>
+    <app-titulo [titulo]="'Professor: ' + professorSelecionado.id">
+        <button class="btn btn-warning" (click)="voltar()">Lista de Professores</button>
+    </app-titulo>
 
     <form [formGroup]="professorForm" (submit)="professorSubmit()">
         <div class="form-group">
@@ -26,7 +21,9 @@
 
 
 <div *ngIf="!professorSelecionado">
-    <app-titulo [titulo]="titulo"></app-titulo>
+    <app-titulo [titulo]="titulo">
+        <button class="btn btn-success" (click)="voltar()">Cadastrar Professor</button>
+    </app-titulo>
 
     <table class="table table-hover">
         <thead class="thead-light">

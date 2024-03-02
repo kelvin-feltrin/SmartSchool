@@ -1,14 +1,9 @@
 <div class="row">
 
     <div class="col-sm-6" *ngIf="alunoSelecionado">
-        <div class="row row-cols-lg-auto align-items-center justify-content-between mt-1">
-            <div class="">
-                <app-titulo [titulo]="'Cód. Aluno: ' + alunoSelecionado.id"></app-titulo>
-            </div>
-            <div class="">
-                <button class="btn btn-sm btn-outline-danger" (click)="voltar()">Fechar</button>
-            </div>
-        </div>
+        <app-titulo [titulo]="'Cód. Aluno: ' + alunoSelecionado.id">
+            <button class="btn btn-sm btn-outline-danger" (click)="voltar()">Fechar</button>
+        </app-titulo>
 
         <form [formGroup]="alunoForm" (submit)="alunoSubmit()">
             <div class="form-group">
@@ -31,7 +26,9 @@
     </div>
 
     <div [ngClass]="{'col-sm-6': alunoSelecionado, 'col-sm-12':!alunoSelecionado}">
-        <app-titulo [titulo]="titulo"></app-titulo>
+        <app-titulo [titulo]="titulo">
+            <button class="btn btn-success" (click)="alunoNovo()">Cadastrar Aluno</button>
+        </app-titulo>
 
         <table class="table table-hover">
             <thead class="thead-light">

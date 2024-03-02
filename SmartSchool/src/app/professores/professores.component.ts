@@ -33,14 +33,14 @@ export class ProfessoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.carregarProfessor();
+    this.carregarProfessores();
   }
 
   salvarProfessor(professor: Professor) {
     this.professorService.put(professor.id, professor).subscribe(
       (retorno: Professor) => {
         console.log(retorno);
-        this.carregarProfessor();
+        this.carregarProfessores();
       },
       (erro: any) => {
         console.log(erro);
@@ -52,7 +52,7 @@ export class ProfessoresComponent implements OnInit {
     this.salvarProfessor(this.professorForm.value);
   }
 
-  carregarProfessor() {
+  carregarProfessores() {
     this.professorService.getAll().subscribe(
       (professores: Professor[]) => {
         this.professores = professores;
