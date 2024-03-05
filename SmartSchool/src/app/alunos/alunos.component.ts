@@ -15,6 +15,7 @@ export class AlunosComponent implements OnInit {
   public alunoForm: FormGroup = {} as FormGroup;
   public titulo = 'Alunos';
   public alunoSelecionado: Aluno = null as any;
+  public modo = 'post';
 
   public alunos: Aluno[] = null as any;
  
@@ -44,7 +45,9 @@ export class AlunosComponent implements OnInit {
    }
 
   salvarAluno(aluno: Aluno) {
-    this.alunoService.put(aluno.id, aluno).subscribe(
+    (aluno.id === 0) ? this.modo = 'post' : this.modo = 'put';
+
+    this.alunoService[this.modo](aluno).subscribe(
       (retorno: Aluno) => {
         console.log(retorno);
         this.carregarAlunos();
