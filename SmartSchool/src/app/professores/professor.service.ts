@@ -26,8 +26,8 @@ export class ProfessorService {
     return this.http.post(`${this.baseUrl}`, professor);
   }
 
-  put(id: number, professor: Professor) {
-    return this.http.put(`${this.baseUrl}/${id}`, professor);
+  put(professor: Professor) {
+    return this.http.put(`${this.baseUrl}/${professor.id}`, professor);
   }
 
   delete(id: number) {

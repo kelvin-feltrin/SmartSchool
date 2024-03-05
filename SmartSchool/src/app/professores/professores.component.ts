@@ -15,6 +15,7 @@ export class ProfessoresComponent implements OnInit {
   public professorForm: FormGroup = {} as FormGroup;
   public titulo = 'Professores';
   public professorSelecionado: Professor = null as any;
+  public modo = 'post';
 
   public professores: Professor[] = null as any;
 
@@ -37,7 +38,9 @@ export class ProfessoresComponent implements OnInit {
   }
 
   salvarProfessor(professor: Professor) {
-    this.professorService.put(professor.id, professor).subscribe(
+    (professor.id === 0) ? this.modo = 'post' : this.modo = 'put';
+
+    this.professorService[this.modo](professor).subscribe(
       (retorno: Professor) => {
         console.log(retorno);
         this.carregarProfessores();
@@ -66,6 +69,11 @@ export class ProfessoresComponent implements OnInit {
   professorSelect(professor: Professor){
     this.professorSelecionado = professor;
     this.professorForm.patchValue(professor);
+  }
+
+  professorNovo() {
+    this.professorSelecionado = new Professor();
+    this.professorForm.patchValue(this.professorSelecionado);
   }
 
   criarForm() {
