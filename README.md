@@ -1,6 +1,6 @@
 # SmartSchool Project
 
-* Leia em [Português](#)
+* Leia em [Português](https://github.com/kelvin-feltrin/SmartSchool/blob/main/README-pt.md)
 
 ## About the project
 The "SmartSchool" project was developed to practice the development of an application that uses Angular and an C# .NET Web API.
